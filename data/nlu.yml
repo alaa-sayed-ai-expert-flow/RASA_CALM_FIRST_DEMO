@@ -1,0 +1,15 @@
+version: "3.1"
+nlu:
+- intent: transfer_money
+  examples: |
+    - I want to send money to [John](recipient)
+    - Send [50](amount) dollars to [John](recipient)
+    - Transfer [100](amount) dollars to [Jane](recipient)
+    - I need to transfer [200](amount) to [Alice](recipient)
+
+- intent: chitchat
+  examples: |
+    - How's it going?
+    - What's up?
+    - Tell me a joke
+    - Can we chat?

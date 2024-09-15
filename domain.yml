@@ -1,0 +1,28 @@
+version: "3.1"
+
+intents:
+  - chitchat   # Add the chitchat intent
+  - transfer_money  # Add the transfer_money intent
+
+actions:
+  - action_check_sufficient_funds  # Custom action
+
+slots:
+  recipient:
+    type: text
+    mappings:
+      - type: from_llm
+  amount:
+    type: float
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_recipient:
+    - text: "Who would you like to send money to?"
+
+  utter_ask_amount:
+    - text: "How much money would you like to send?"
+
+  utter_transfer_complete:
+    - text: "All done. {amount} has been sent to {recipient}."

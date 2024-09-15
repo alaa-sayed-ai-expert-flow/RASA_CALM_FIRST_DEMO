@@ -1,0 +1,18 @@
+version: "3.1"
+stories:
+- story: Transfer money to a recipient
+  steps:
+  - intent: transfer_money
+  - action: utter_ask_recipient
+  - slot_was_set:
+      - recipient: John
+  - action: utter_ask_amount
+  - slot_was_set:
+      - amount: 100
+  - action: action_check_sufficient_funds
+  - action: utter_transfer_complete
+
+- story: Chitchat example
+  steps:
+  - intent: chitchat
+  - action: utter_free_chitchat_response
